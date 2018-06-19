@@ -1,0 +1,77 @@
+body{
+    background-image: url(../images/bg2.jpg);
+    /*
+    background-position: center;
+    background-repeat: no-repeat;
+    background: fixed;
+    background-size: cover;*/
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content{
+    background-color: black;
+    color: white;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    margin: 15% 25%;
+    padding-bottom: 50px;
+   
+}
+
+#start{
+    width: 50%;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+}
+#one{
+    background-color: rgb(151, 8, 8);
+    border-color: gold;
+    color: gold;
+    width: 50%;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+}
+#two{
+    background-color:rgb(201, 201, 6);
+    border-color: rgba(0, 0, 0, 0.822);
+    width: 50%;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    
+  
+}
+#three{
+    background-color: #065822;
+    border-color: silver;
+    color: silver;
+    width: 50%;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+}
+#four{
+    background-color:blue;
+    border-color: rgba(255, 255, 255, 0.856);
+    color:  rgba(255, 255, 255, 0.856);
+    width: 50%;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+}
+
+#strtImg{
+    height: 360px;
+    width:  200px;
+}
