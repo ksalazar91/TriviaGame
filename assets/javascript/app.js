@@ -20,10 +20,8 @@ $(document).ready(function(){
     var num = 0;
     var win = 0;
     var loss = 0;
-    var t,s;
-
-    var counter = 0;
-    var count = 1;
+    var t;
+    var count = 0;
 
     // it will hide the game questions only showing the start button and hogwarst pictrue
     function startDisplay(){
@@ -56,19 +54,21 @@ $(document).ready(function(){
     }     
     
     function results(){
-
+        clearInterval(t)
         $(".questions").hide();
         $("#images").hide();
         $("#answer").hide();
         $("#timer").hide();
         $(".restart").show();
-        
-        counter = 0;
+    
        
         if(win > loss){
             $("#h2").text("Congragulations YOU Won");
         } 
-
+        
+        else if(win === loss){
+            $("#h2").text("YOU Tie");
+        }
         else{
             $("#h2").text("Sorry!... YOU Lost");
         }
@@ -83,12 +83,13 @@ $(document).ready(function(){
 
     }
 
-
     function loops(x){
         $("#images").show();
         $("#answer").show();
         $("#images").html(questions[num].image);
-     
+        console.log(count);
+        console.log(questions.length);
+
         if(x === questions[num].answer){
             clearInterval(t)
             $("#answer").html("<p>Correct</p>")
@@ -98,10 +99,11 @@ $(document).ready(function(){
             count++;
             setTimeout(update, 5000);
 
-            if(count === questions.length){
-                clearInterval(t);
-                results();
+            if(count == questions.length){
+                clearInterval(t);              
+                setTimeout(results, 5000);
             }
+
         }
         else{
             clearInterval(t)
@@ -110,15 +112,15 @@ $(document).ready(function(){
             num++;
             loss++;
             count++;
-            setTimeout(update, 2000);
+            setTimeout(update, 5000);
 
-            if(count === questions.length){
-                clearInterval(t); 
-                results();
+            if(count == questions.length){
+                clearInterval(t);              
+                setTimeout(results, 5000);
             }
         }
-        
     }
+
 
     function timer(){
         var x = 10;
@@ -129,15 +131,21 @@ $(document).ready(function(){
                 $("#timer").html("<p>Time Reminding: " + x + " seconds</p>");
                 clearInterval(t);
                 $("#timer").html("<h2>SORRY TIME HAS RUN OUT</h2>");
-                num++;
-                counter++;
-                console.log(counter);
-                 console.log(questions.length);
-                s = setTimeout(update, 5000); 
+                $("#answer").html("<p>No The Correct Answer was: " + questions[num].list[questions[num].answer]+ "</p>")
+                $("#images").html(questions[num].image);
+                $("#answer").show();
+                $("#images").show();
+                $(".questions").hide();
 
-                if(counter === questions.length){
+                num++;
+                count++;
+                console.log(count);
+                 console.log(questions.length);
+                setTimeout(update, 5000); 
+
+                if(count === questions.length){
                     clearInterval(t);              
-                    results();
+                    setTimeout(results, 5000);
                 }
                 
             }
