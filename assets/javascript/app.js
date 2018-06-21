@@ -47,6 +47,7 @@ $(document).ready(function(){
     var loss = 0;
     var t;
     var count = 0;
+    var notAnswer = 0;
 
     // it will hide the game questions only showing the start button and hogwarst pictrue
     function startDisplay(){
@@ -92,14 +93,15 @@ $(document).ready(function(){
         } 
         
         else if(win === loss){
-            $("#h2").text("YOU Tie");
+            $("#h2").text("You Tie");
         }
         else{
-            $("#h2").text("Sorry!... YOU Lost");
+            $("#h2").text("Sorry!... You Lost");
         }
         
         $("#correct").html("<p> Correct Answers: " + win + "</p>");
         $("#incorrect").html("<p> Incorrect Answers: " + loss + "</p>");
+        $("#nAnswer").html("<p> Not Answers: " + notAnswer + "</p>");
 
         num = 0;
         count =0;
@@ -170,8 +172,8 @@ $(document).ready(function(){
 
                 num++;
                 count++;
-                console.log(count);
-                 console.log(questions.length);
+                notAnswer++;
+
                 setTimeout(update, 5000); 
 
                 if(count === questions.length){
