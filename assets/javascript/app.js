@@ -8,13 +8,38 @@ $(document).ready(function(){
         { question: "What does Hermione transforms affter taking Polyjuice Potion correctly?",
             list:["Draco Malfoy", "cat", "Dog", "Harry Potter"],
             answer: 3,
-            image:'<img src="assets/images/2.gif" id="image" alt="Nearly Headless Nick"/>'},
+            image:'<img src="assets/images/2.gif" id="image" alt="Seven Harrys"/>'},
             
         { question:"How many Weasley brothers are there?",
         list:["6", "7", "5", "8"],
         answer: 0,
-        image:'<img src="assets/images/3.png" id="image" alt="Nearly Headless Nick"/>'           
-    }];
+        image:'<img src="assets/images/3.png" id="image" alt="Weasley Family"/>'},
+
+        { question:"What is the name of Harry Potter's familiar?",
+        list:["Errol", "Hedwig", "Padfoot", "Crookshanks"],
+        answer: 1,
+        image:'<img src="assets/images/4.gif" id="image" alt="Hedwig"/>'},
+
+        { question:"What is Harry patronus?",
+        list:["Dragon", "snake", "Dog", "Stag"],
+        answer: 3,
+        image:'<img src="assets/images/5.gif" id="image" alt="Haryy Patronus"/>'},
+
+        { question:"What is Dumbledore Phoenix Name?",
+        list:["Nagini", "Griphook", "Nargle", "Fawkes"],
+        answer: 3,
+        image:'<img src="assets/images/6.gif" id="image" alt="Fawkes"/>'},
+
+        { question:"Who was Harry Potter Godfather?",
+        list:["Scables", "snuffles", "Moony", "Prongs"],
+        answer: 1,
+        image:'<img src="assets/images/7.gif" id="image" alt="Sirius Black Animagus"/>'},
+        
+        { question:"What is Voldemort familiar Names?",
+        list:["Nagini", "Griphook", "Nargle", "Hedwig"],
+        answer: 0,
+        image:'<img src="assets/images/8.gif" id="image" alt="Nagini"/>'}
+    ];
 
     var time = 10;
     var num = 0;
@@ -40,7 +65,7 @@ $(document).ready(function(){
     function display(){
         questionsDisplay();
         console.log(questions[num]);
-        $("#timer").html("<p>Time Reminding: </p>");
+        $("#timer").html("<p>Time Remaining: </p>");
         $("#questions").html("<p>" + questions[num].question + "</p>");
         $("#one").html(questions[num].list[0]);
         $("#two").html(questions[num].list[1]);
@@ -63,7 +88,7 @@ $(document).ready(function(){
     
        
         if(win > loss){
-            $("#h2").text("Congragulations YOU Won");
+            $("#h2").text("Congragulations You Won");
         } 
         
         else if(win === loss){
@@ -74,9 +99,15 @@ $(document).ready(function(){
         }
         
         $("#correct").html("<p> Correct Answers: " + win + "</p>");
-        $("#incorrect").html("<p> Correct Answers: " + loss + "</p>");
+        $("#incorrect").html("<p> Incorrect Answers: " + loss + "</p>");
+
+        num = 0;
+        count =0;
+       
 
         $("#restart").on("click", function(){
+            loss = 0;
+            win = 0;
             display();
             timer();
         });
