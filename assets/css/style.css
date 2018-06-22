@@ -88,3 +88,25 @@ h2{
 #h2{
     color: gold;
 }
+
+@media screen and (max-width: 370px){
+    #image{
+        width: 150px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 450px){
+    #image{
+        width: 150px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 370px){
+    #image{
+        width: 100px;
+        height: 30px;
+    }
+    .content{
+        height: 500px;
+    }
+}
