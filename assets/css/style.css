@@ -94,6 +94,11 @@ h2{
         width: 150px;
         height: 60px;
     }
+    .content{
+        height: 500px;
+        margin: 10%;
+        width: 75%;
+    }
 }
 @media screen and (max-width: 450px){
     #image{
