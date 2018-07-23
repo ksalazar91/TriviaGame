@@ -1,4 +1,6 @@
 # TriviaGame
+https://ksalazar91.github.io/TriviaGame/
+
 Time base trivia game base on harry potter
 
 To start the game the user needs to press the start button.

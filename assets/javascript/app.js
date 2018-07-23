@@ -216,7 +216,7 @@ $(document).ready(function(){
         
     });
 
-
+  
 });      
       
 //https://ksalazar91.github.io/Responsive-Portfolio/portfolio.html

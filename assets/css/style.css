@@ -107,6 +107,8 @@ h2{
     }
     .content{
         height: 500px;
+        margin: 10%;
+        width: 75%;
     }
     
 }
